@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "debugger offscreen desync poc",
+  "version": "1.0",
+  "permissions": [
+    "offscreen",
+    "debugger"
+  ],
+  "action": {
+    "default_title": "trigger exploit"
+  },
+  "background": {
+    "service_worker": "sw.js"
+  }
+}
