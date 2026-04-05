@@ -17,8 +17,10 @@ chrome.action.onClicked.addListener(async () => {
 
   // 2. find the debugger target for the offscreen doc
   const targets = await chrome.debugger.getTargets();
-  const offscreenTarget = targets.find(t => t.url.includes('offscreen.html'));
-
+  const offscreenTarget = targets.find(t => 
+    t.url.includes(chrome.runtime.id) && 
+    t.url.includes('offscreen.html')
+  );
   if (!offscreenTarget) {
     console.error("[-] couldn't find offscreen target in devtools list.");
     return;
